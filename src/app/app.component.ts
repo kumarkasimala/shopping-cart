@@ -7,6 +7,7 @@ import { ProductList } from './mockData/productlist';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ 
   title = 'shopping-cart';
   products = [];
   cartlist = [];

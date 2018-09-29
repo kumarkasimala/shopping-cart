@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartListComponent implements OnInit {
   @Input() cartList = [];
+  removeAll(){
+    while(this.cartList.length > 0) { this.cartList.pop(); }
+  }
   constructor() { 
 
   }

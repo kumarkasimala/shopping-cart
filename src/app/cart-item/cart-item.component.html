@@ -1,7 +1,12 @@
 <div class="cart-item">
 
-<div>
-  {{ cartItem.name}}
+<div style="text-align:left">
+  
+  {{ "Name: "+cartItem.name}} &nbsp;
+  {{"Id: "+cartItem.id}} &nbsp;
+  {{"Company: " +cartItem.company}} &nbsp;
+  {{"Price: " +cartItem.price}} &nbsp;
+  <!-- <button (click) = "delete()">Delete</button> -->
 </div>
 
 </div>
