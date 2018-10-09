@@ -1,12 +1,25 @@
 <div class="cart-item">
 
 <div style="text-align:left">
+  <table class="table table-bordered">
+    
+      <tr>
+        
+        <td>Description</td>
+    
+      </tr>
+    
+    
+      <tr>
+        <td>{{ "Name: "+cartItem.name}} {{"Id: "+cartItem.id}} {{"Company: " +cartItem.company}} {{"Price: " +cartItem.price}}</td>
   
-  {{ "Name: "+cartItem.name}} &nbsp;
-  {{"Id: "+cartItem.id}} &nbsp;
-  {{"Company: " +cartItem.company}} &nbsp;
-  {{"Price: " +cartItem.price}} &nbsp;
-  <!-- <button (click) = "delete()">Delete</button> -->
+      </tr>
+    
+  </table>
+      
+      
+    
+  
 </div>
 
 </div>

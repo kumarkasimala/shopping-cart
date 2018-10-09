@@ -1,7 +1,9 @@
+
 <ol>
-<li  *ngFor="let cart of cartList">
- <app-cart-item [cartItem]="cart"></app-cart-item>;
+<li  *ngFor="let cart of cartList; let i=index">
+ <app-cart-item [cartItem]="cart"></app-cart-item>
+ <button (click) = delete(i)>Delete Item</button>
 </li>
 </ol>
 <hr>
-<button (click) = "removeAll()">Remove</button>
+<button (click) = "removeAll()">Remove All Items</button>

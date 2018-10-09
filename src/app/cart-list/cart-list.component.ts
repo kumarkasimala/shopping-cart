@@ -6,8 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  @Input() cartList = [];
+  cartlist = [];
+  @Input() cartList = [] = this.cartlist;
+  delete(i){
+   this.cartList.splice(i,1);
+   }
   removeAll(){
+    
     while(this.cartList.length > 0) { this.cartList.pop(); }
   }
   constructor() { 

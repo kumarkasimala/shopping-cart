@@ -11,8 +11,6 @@ export class CartItemComponent implements OnInit {
   constructor() { 
     this.cartItem = null;
   }
-
-
   ngOnInit() {
   }
 

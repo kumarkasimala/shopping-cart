@@ -1,57 +1,29 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <ul class="nav nav-tabs">
+        <li><a routerLink="/product" routerLinkAction = "active">Products</a></li>
+        <li><a routerLink="/cartList" routerLinkAction = "active">CartList</a></li>
+        <li><a routerLink="/furniture" routerLinkAction = "active">Furnitures</a></li>
+      </ul>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div style="text-align:center">
 
   <div>
     
     <button (click)="showCart()">Go to Cart</button>
     <button (click)="showProducts()">Go to Products</button>
-  </div>
-  <table *ngIf="!isShowCart">
-   <thead>
-     <tr>
-       <td>
-         Product Name
-       </td>
-       <td>
-          Product Id
-        </td>
-        <td>
-            Product Description
-        </td>
-
-        <td>
-            Product Price
-        </td>
-
-        <td>
-            Action
-        </td>
-     </tr>
-   </thead>
-    <tbody>
-
-        <tr *ngFor="let product of products">
-            <td >
-               {{ product.name }}
-            </td>
-            <td>
-                {{ product.id }}
-             </td>
-             <td>
-                {{ product.description }}
-             </td>
-
-             <td>
-                {{ product.price }}
-             </td>
-             <td>
-               <button (click)="onSelect(product)"> Add to Cart</button>
-             </td>
-          </tr>
-
-    </tbody>
-    
-  </table>
-
-  <app-cart-list *ngIf="isShowCart" [cartList]="cartlist"></app-cart-list>
+    <button (click)="showFurnitures()">Go to Furnitures</button>
+  </div> <br>
+  
+  
+  <app-furniture *ngIf="isShowFurnitures" [furnitures]= "furniture"></app-furniture>
 </div>
+</div> -->
+<!-- <app-cart-list [cartList] = "cartlist"></app-cart-list> -->
