@@ -6,10 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  cartlist = [];
-  @Input() cartList = [] = this.cartlist;
+  
+  @Input() cartList = [];
+
   delete(i){
    this.cartList.splice(i,1);
+   }
+
+   addNewItem(product){
+    this.cartList.push(product);
    }
   removeAll(){
     

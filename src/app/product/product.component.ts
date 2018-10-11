@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductList } from '../mockData/productlist';
 @Component({
   selector: 'app-product',
@@ -8,12 +8,14 @@ import { ProductList } from '../mockData/productlist';
 export class ProductComponent implements OnInit {
   products = [];
   cartlist = [];
+  @Output() addTo = new EventEmitter<any>();
+
   constructor(){
     this.products = new ProductList().getData();
   }
 
   onSelect(product){
-    this.cartlist.push(product);
+    this.addTo.next(product);
   }
 
   ngOnInit() {
