@@ -14,7 +14,9 @@ export class CartListComponent implements OnInit {
    }
 
    addNewItem(product){
-    this.cartList.push(product);
+    setTimeout( function(){
+      this.cartList.push(product);
+    }.bind(this),500);
    }
   removeAll(){
     
@@ -22,6 +24,10 @@ export class CartListComponent implements OnInit {
   }
   constructor() { 
 
+  }
+
+  public trackItem (index: number, item:any) {
+    return item.id;
   }
 
   ngOnInit() {

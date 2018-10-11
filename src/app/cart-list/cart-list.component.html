@@ -1,6 +1,6 @@
 
 <ol>
-<li  *ngFor="let cart of cartList; let i=index">
+<li  *ngFor="let cart of cartList; let i=index; trackBy: trackItem">
  <app-cart-item [cartItem]="cart"></app-cart-item>
  <button (click) = delete(i)>Delete Item</button>
 </li>
