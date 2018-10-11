@@ -10,25 +10,26 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'shopping-cart';
   
-  cartListCmp = null;
   pendingCarts=[];
 
   onActivate(component) {
-    if(component.constructor.name === "CartListComponent" && !this.cartListCmp){
-      this.cartListCmp = component;
+    if(component.constructor.name === "CartListComponent"){
       for(var i in this.pendingCarts){
-        this.cartListCmp.addNewItem(this.pendingCarts[i]);
+        component.addNewItem(this.pendingCarts[i]);
       }
+      component.clear.subscribe(function(data){
+        if(data === true) {
+        this.pendingCarts = [];
+        } else {
+          this.pendingCarts.splice(this.pendingCarts.indexOf(data[0]),1)
+        }
+      }.bind(this));
     } else if(component.addTo){
       component.addTo.subscribe(this.updateCartList.bind(this));
     }
   }
 
   updateCartList(product){
-    if(this.cartListCmp) {
-      this.cartListCmp.addNewItem(product);
-    } else {
       this.pendingCarts.push(product);
-    }
   }
 }

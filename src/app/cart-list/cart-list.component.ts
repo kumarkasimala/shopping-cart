@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cart-list',
@@ -8,9 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartListComponent implements OnInit {
   
   @Input() cartList = [];
+  @Output() clear = new EventEmitter<any>();
 
   delete(i){
-   this.cartList.splice(i,1);
+   this.clear.next(this.cartList.splice(i,1));
    }
 
    addNewItem(product){
@@ -19,8 +20,8 @@ export class CartListComponent implements OnInit {
     }.bind(this),500);
    }
   removeAll(){
-    
     while(this.cartList.length > 0) { this.cartList.pop(); }
+    this.clear.next(true);
   }
   constructor() { 
 
