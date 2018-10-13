@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
     this.products = new ProductList().getData();
   }
 
-  onSelect(product){
+  onClickAddToCart(product){
     this.addTo.next(product);
   }
 

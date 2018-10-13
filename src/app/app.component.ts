@@ -18,7 +18,7 @@ export class AppComponent {
         component.addNewItem(this.pendingCarts[i]);
       }
       component.clear.subscribe(function(data){
-        if(data === true) {
+        if(data !== true) {
         this.pendingCarts = [];
         } else {
           this.pendingCarts.splice(this.pendingCarts.indexOf(data[0]),1)
