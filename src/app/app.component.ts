@@ -13,14 +13,12 @@ export class AppComponent {
   pendingCarts=[];
 
   onActivate(component) {
-    debugger;
     if(component.constructor.name === "CartListComponent"){
       for(var i in this.pendingCarts){
         component.addNewItem(this.pendingCarts[i]);
       }
       component.clear.subscribe(function(data){
-        debugger;
-        if(data == true) {
+      if(data == true) {
         this.pendingCarts = [];
         } else {
           this.pendingCarts.splice(this.pendingCarts.indexOf(data[0]),1)
