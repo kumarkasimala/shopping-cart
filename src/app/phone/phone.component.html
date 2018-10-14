@@ -1,0 +1,26 @@
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Phone Name</th>
+            <th>Company</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of phones">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.company}}</td>
+            <td>{{p.price}}</td>
+            <td>
+              <button (click) = "selectPhone(p)" >Add to cart</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

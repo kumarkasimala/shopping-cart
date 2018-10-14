@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { concat } from 'rxjs';
 
 @Component({
   selector: 'app-cart-list',
@@ -6,8 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  @Input() cartList = [];
-  constructor() { 
+  @Input() addToCart: any[];
+  constructor() {
 
   }
 
