@@ -11,13 +11,13 @@ export class CartListComponent implements OnInit {
   @Output() clear = new EventEmitter<any>();
 
   delete(i){
-   this.clear.next(this.cartList.splice(i,1));
+    this.clear.next(this.cartList.splice(i, 1));
    }
 
    addNewItem(product){
     setTimeout( function(){
       this.cartList.push(product);
-    }.bind(this),500);
+    }.bind(this), 500);
    }
   removeAll(){
     while(this.cartList.length > 0) { this.cartList.pop(); }
