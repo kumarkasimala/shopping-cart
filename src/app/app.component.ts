@@ -13,8 +13,8 @@ export class AppComponent {
   pendingCarts=[];
 
   onActivate(component) {
-    if(component.constructor.name === "CartListComponent"){
-      for(var i in this.pendingCarts){
+    if (component.constructor.name === "CartListComponent") {
+      for(var i in this.pendingCarts) {
         component.addNewItem(this.pendingCarts[i]);
       }
       component.clear.subscribe(function(data){
