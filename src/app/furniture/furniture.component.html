@@ -1,0 +1,22 @@
+<div *ngIf = "!isShowProducts">
+<table *ngIf = "!isShowCart" class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Id</td>
+      <td>Brand</td>
+      <td>Price</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let furniture of furnitures">
+      <td> {{furniture.name}} </td>
+      <td> {{furniture.id}} </td>
+      <td> {{furniture.company}} </td>
+      <td> {{furniture.price}} </td>
+      <td> <button (click)="onClickAddToCart(furniture)">Add to Cart</button> </td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,47 +1,47 @@
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <td>
-        Product Name
-      </td>
-      <td>
-         Product Id
-       </td>
-       <td>
-           Product Description
-       </td>
-
-       <td>
-           Product Price
-       </td>
-
-       <td>
-           Action
-       </td>
-    </tr>
-  </thead>
-   <tbody>
-
-       <tr *ngFor="let product of products">
-           <td >
-              {{ product.name }}
-           </td>
-           <td>
-               {{ product.id }}
-            </td>
-            <td>
-               {{ product.description }}
-            </td>
-
-            <td>
-               {{ product.price }}
-            </td>
-            <td>
-              <button (click)="onSelect(product)"> Add to Cart</button>
-            </td>
-         </tr>
-
-   </tbody>
-   
- </table>
-
+<table class="table table-bordered table-hover" >
+    <thead>
+      <tr>
+        <td>
+          OS Name
+        </td>
+        <td>
+           OS Id
+         </td>
+         <td>
+             OS Description
+         </td>
+ 
+         <td>
+             OS Price
+         </td>
+ 
+         <td>
+             Action
+         </td>
+      </tr>
+    </thead>
+     <tbody>
+ 
+         <tr *ngFor="let product of products">
+             <td >
+                {{ product.name }}
+             </td>
+             <td>
+                 {{ product.id }}
+              </td>
+              <td>
+                 {{ product.description }}
+              </td>
+ 
+              <td>
+                 {{ product.price }}
+              </td>
+              <td>
+                <button (click)="onClickAddToCart(product)"> Add to Cart</button>
+              </td>
+           </tr>
+ 
+     </tbody>
+     
+   </table>
+ 

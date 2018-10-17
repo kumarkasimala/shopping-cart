@@ -8,14 +8,14 @@ import { PhoneList } from '../mockData/phonelist';
 })
 export class PhoneComponent implements OnInit {
   phones: any[];
-  @Output() addToCart = new EventEmitter<any>() ;
+  @Output() addTo = new EventEmitter<any>() ;
 
   constructor() {
     this.phones = new PhoneList().getList();
 
   }
-  selectPhone(p) {
-    this.addToCart.next(p);
+  onClickAddToCart(p) {
+    this.addTo.next(p);
   }
 
   ngOnInit() {

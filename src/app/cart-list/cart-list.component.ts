@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { concat } from 'rxjs';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-cart-list',
@@ -7,9 +6,28 @@ import { concat } from 'rxjs';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  @Input() addToCart: any[];
+  @Input() cartList = [];
+  @Output() clear = new EventEmitter<any>();
+
+  delete(i) {
+    this.clear.next(this.cartList.splice(i, 1));
+   }
+
+   addNewItem(product) {
+    setTimeout( function() {
+      this.cartList.push(product);
+    }.bind(this), 500);
+   }
+  removeAll() {
+    while (this.cartList.length > 0) { this.cartList.pop(); }
+    this.clear.next(true);
+  }
   constructor() {
 
+  }
+
+  public trackItem (index: number, item: any) {
+    return item.id;
   }
 
   ngOnInit() {
