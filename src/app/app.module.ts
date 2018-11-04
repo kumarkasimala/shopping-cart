@@ -8,6 +8,7 @@ import { ProductComponent } from './product/product.component';
 import { CartListComponent } from './cart-list/cart-list.component';
 import { FurnitureComponent } from './furniture/furniture.component';
 import { PhoneComponent } from './phone/phone.component';
+import { PhoneFilterPipe } from './phone-filter.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { PhoneComponent } from './phone/phone.component';
     ProductComponent,
     CartListComponent,
     FurnitureComponent,
-    PhoneComponent
+    PhoneComponent,
+    PhoneFilterPipe
   ],
   imports: [
     BrowserModule,

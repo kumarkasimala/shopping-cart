@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PhoneList } from '../mockData/phonelist';
+import { PhoneFilterPipe} from '../phone-filter.pipe';
 
 @Component({
   selector: 'app-phone',

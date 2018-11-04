@@ -7,9 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CartItemComponent implements OnInit {
   @Input() cartItem;
+  quantity = 1;
+  pTotalPrice;
 
-  constructor() { 
+  constructor() {
     this.cartItem = null;
+  }
+  decQuantity() {
+    if (this.quantity > 0) {
+    this.quantity--;
+    }
+    this.pTotalPrice = this.quantity * this.cartItem.price;
+  }
+  incQuantity() {
+    this.quantity++;
+    this.pTotalPrice = this.quantity * this.cartItem.price;
+  }
+  pTotPrice() {
+    this.pTotalPrice = this.quantity * this.cartItem.price;
   }
   ngOnInit() {
   }

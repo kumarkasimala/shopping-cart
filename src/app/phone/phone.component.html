@@ -1,3 +1,12 @@
+    
+<div>
+  <input [(ngModel)]="searchPhone" placeholder="searech phone here">
+</div>
+<ul>
+  <li *ngFor = "let phone of phones | phoneFilter : searchPhone">
+    {{phone.name}} </li>
+</ul>
+    
     <table class="table table-bordered table-hover">
         <thead>
           <tr>

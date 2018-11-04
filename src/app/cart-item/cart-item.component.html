@@ -9,7 +9,8 @@
         <td>Product Company</td>
         <td>Product Price</td>
         <td>Product Type</td>
-        <td>Action</td>    
+        <td>Quantity</td>   
+        <td>Product Total Price</td> 
       </tr>    
       <tr>
         <td>{{cartItem.id}}</td>
@@ -17,6 +18,11 @@
         <td>{{cartItem.company}}</td>
         <td>{{cartItem.price}}</td>
         <td>{{cartItem.Component}}</td>
+        <td><button (click)="decQuantity()" >-</button>
+          <input type="text" size="1" value = {{quantity}}>
+          <button (click) = "incQuantity()" >+</button> 
+        </td>
+        <td><input type="number" size ="2" value = {{pTotalPrice}} readonly><button (click) = "pTotPrice()">Price</button> </td>
       </tr>
     
   </table>
